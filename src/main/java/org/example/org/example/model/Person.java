@@ -7,8 +7,8 @@ public class Person {
     long id;
 
     public Person(String name, String surname, int birthYear) {
-        //this.id = 1;
-        this.id = lastPersonId++;
+        this.id = 1;
+        //this.id = lastPersonId++;
         this.name = name;
         this.surname = surname;
         this.birthYear = birthYear;
