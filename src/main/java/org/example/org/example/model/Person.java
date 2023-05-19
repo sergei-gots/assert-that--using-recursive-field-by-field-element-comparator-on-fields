@@ -6,17 +6,17 @@ public class Person {
     private static long lastPersonId;
     long id;
 
+    String name;
+
+    String surname;
+    int birthYear;
     public Person(String name, String surname, int birthYear) {
         this.id = 1;
-        //this.id = lastPersonId++;
+        this.id = lastPersonId++;
         this.name = name;
         this.surname = surname;
         this.birthYear = birthYear;
     }
-
-    String name;
-    String surname;
-    int birthYear;
 
     @Override
     public boolean equals(Object o) {
