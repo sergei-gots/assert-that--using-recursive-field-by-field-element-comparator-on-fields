@@ -13,21 +13,13 @@ class PersonTest {
         List<Person> list2 = List.of(new Person("John", "Johnson", 1990));
         List<Person> list3 = List.of(new Person("Not-a-John", "Johnson", 1990));
 
-        //should be OK:
         assertThat(list1)
-                .usingRecursiveComparison()
-                .comparingOnlyFields("name")
-                .asList()
+                .usingRecursiveFieldByFieldElementComparatorOnFields("name")
                 .containsExactlyInAnyOrderElementsOf(list2);
 
-        //should FAIL:
         assertThat(list1)
-                .usingRecursiveComparison()
-                .comparingOnlyFields("name")
-                .asList()
+                .usingRecursiveFieldByFieldElementComparatorIgnoringFields("id", "name")
                 .containsExactlyInAnyOrderElementsOf(list3);
-
-
     }
 
 
